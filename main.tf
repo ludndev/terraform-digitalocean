@@ -17,6 +17,10 @@ variable "projet_name" {
 	description = "Project Name"
 	type        = string
 }
+variable "projet_description" {
+	description = "Project Description"
+	type        = string
+}
 variable "digitalocean_token" {
 	description = "DigitalOcean API Token"
 	type        = string
@@ -42,7 +46,7 @@ provider "digitalocean" {
 # add project
 resource "digitalocean_project" "project" {
   name        = upper(trimspace(var.projet_name))
-  description = "A demo with Terraform"
+  description = var.projet_description
 }
 
 # create vpc
