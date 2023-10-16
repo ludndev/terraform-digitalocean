@@ -107,3 +107,11 @@ resource "digitalocean_project_resources" "project_resource" {
 		digitalocean_spaces_bucket.spaces_storage.urn,
 	]
 }
+
+# output
+output "output_server_middleware_ips" {
+	value = digitalocean_droplet.droplet_middleware.ipv4_address
+}
+output "output_server_application_ips" {
+	value = digitalocean_droplet.droplet_application.ipv4_address
+}
