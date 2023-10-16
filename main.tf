@@ -17,10 +17,6 @@ variable "projet_name" {
 	description = "Project Name"
 	type        = string
 }
-variable "projet_name" {
-	description = "Project Name"
-	type        = string
-}
 variable "projet_description" {
 	description = "Project Description"
 	type        = string
