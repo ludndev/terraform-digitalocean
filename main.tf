@@ -81,3 +81,19 @@ resource "digitalocean_spaces_bucket" "spaces_storage" {
 	name   = "${var.projet_name}-storage"
 	region = var.digitalocean_region
 }
+resource "digitalocean_spaces_bucket_cors_configuration" "spaces_storage_cors" {
+	bucket = digitalocean_spaces_bucket.spaces_storage.id
+	region = var.digitalocean_region
+	cors_rule {
+		allowed_headers = ["*"]
+		allowed_methods = ["GET"]
+		allowed_origins = ["*"]
+		max_age_seconds = 3000
+	}
+	cors_rule {
+		allowed_headers = ["*"]
+		allowed_methods = ["PUT", "POST", "DELETE"]
+		allowed_origins = ["https://www.example.com"]
+		max_age_seconds = 3000
+	}
+}
