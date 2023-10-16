@@ -60,6 +60,12 @@ terraform init  -var-file=digitalocean.tfvars
 terraform apply -var-file=digitalocean.tfvars
 ```
 
+6. Remove the infrastructure by running:
+
+```bash
+terraform destroy -var-file=digitalocean.tfvars
+```
+
 Confirm the changes when prompted.
 
 ## Terraform Configuration
