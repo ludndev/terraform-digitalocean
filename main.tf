@@ -17,8 +17,16 @@ variable "projet_name" {
 	description = "Project Name"
 	type        = string
 }
+variable "projet_name" {
+	description = "Project Name"
+	type        = string
+}
 variable "projet_description" {
 	description = "Project Description"
+	type        = string
+}
+variable "projet_domain" {
+	description = "Project Domain Name"
 	type        = string
 }
 variable "digitalocean_token" {
@@ -76,7 +84,7 @@ resource "digitalocean_droplet" "droplet_application" {
 
 # create a new domain
 resource "digitalocean_domain" "domain" {
-	name       = "example.com"
+	name       = var.projet_domain
 	ip_address = digitalocean_droplet.droplet_application.ipv4_address
 }
 
