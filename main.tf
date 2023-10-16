@@ -25,6 +25,14 @@ variable "digitalocean_region" {
 	description = "DigitalOcean Region"
 	type        = string
 }
+variable "digitalocean_spaces_access_id" {
+	description = "DigitalOcean Spaces Access ID"
+	type        = string
+}
+variable "digitalocean_spaces_secret_key" {
+	description = "DigitalOcean Spaces Secret KEY"
+	type        = string
+}
 
 # setup the provider
 provider "digitalocean" {
