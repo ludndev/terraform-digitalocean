@@ -7,7 +7,7 @@ This repository contains Terraform configuration files to deploy a simple infras
 Before you can use these Terraform configurations, make sure you have the following prerequisites in place:
 
 - [Terraform](https://www.terraform.io/) installed on your local machine.
-- A [DigitalOcean][(https://www.digitalocean.com/](https://m.do.co/c/35cefa19b08f)) account.
+- A [DigitalOcean](https://m.do.co/c/35cefa19b08f) account.
 - DigitalOcean API Token for authentication.
 - Your DigitalOcean Spaces secret key for accessing Spaces resources.
 
