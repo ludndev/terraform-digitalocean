@@ -45,6 +45,11 @@ variable "digitalocean_spaces_secret_key" {
 	description = "DigitalOcean Spaces Secret KEY"
 	type        = string
 }
+variable "digitalocean_spaces_allowed_origins" {
+	description = "List of allowed origins to modify on DigitalOcean Storage"
+	type        = list(string)
+	default     = []
+}
 
 # setup the provider
 provider "digitalocean" {
@@ -105,7 +110,7 @@ resource "digitalocean_spaces_bucket_cors_configuration" "spaces_storage_cors" {
 	cors_rule {
 		allowed_headers = ["*"]
 		allowed_methods = ["PUT", "POST", "DELETE"]
-		allowed_origins = ["https://www.example.com"]
+		allowed_origins = var.digitalocean_spaces_allowed_origins
 		max_age_seconds = 3000
 	}
 }
