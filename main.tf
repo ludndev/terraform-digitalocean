@@ -36,3 +36,10 @@ resource "digitalocean_project" "project" {
   name        = upper(trim(var.projet_name))
   description = "A demo with Terraform"
 }
+
+# create vpc
+resource "digitalocean_vpc" "network" {
+	name     = "${var.projet_name}-network"
+	region   = var.digitalocean_region
+	ip_range = "10.10.10.0/28"
+}
