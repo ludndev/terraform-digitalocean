@@ -61,3 +61,9 @@ resource "digitalocean_droplet" "droplet_application" {
 	ssh_keys		= var.ssh_pub_keys
 	vpc_uuid		= digitalocean_vpc.network.id
 }
+
+# create a new domain
+resource "digitalocean_domain" "domain" {
+	name       = "example.com"
+	ip_address = digitalocean_droplet.droplet_application.ipv4_address
+}
