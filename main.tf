@@ -75,3 +75,9 @@ resource "digitalocean_domain" "domain" {
 	name       = "example.com"
 	ip_address = digitalocean_droplet.droplet_application.ipv4_address
 }
+
+# create storage (spaces)
+resource "digitalocean_spaces_bucket" "spaces_storage" {
+	name   = "${var.projet_name}-storage"
+	region = var.digitalocean_region
+}
