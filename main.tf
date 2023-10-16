@@ -8,6 +8,11 @@ terraform {
 }
 
 # from *.tfvars file
+variable "ssh_pub_keys" {
+  description = "List of SSH Keys (content)"
+  type        = list(string)
+  default     = []
+}
 variable "projet_name" {
 	description = "Project Name"
 	type        = string
