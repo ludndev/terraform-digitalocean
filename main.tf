@@ -97,3 +97,13 @@ resource "digitalocean_spaces_bucket_cors_configuration" "spaces_storage_cors" {
 		max_age_seconds = 3000
 	}
 }
+
+# add resources to project
+resource "digitalocean_project_resources" "project_resource" {
+	project = digitalocean_project.project.id
+	resources = [
+		digitalocean_droplet.droplet_middleware.urn,
+		digitalocean_droplet.droplet_application.urn,
+		digitalocean_spaces_bucket.spaces_storage.urn,
+	]
+}
