@@ -30,3 +30,9 @@ variable "digitalocean_region" {
 provider "digitalocean" {
   token = var.digitalocean_token
 }
+
+# add project
+resource "digitalocean_project" "project" {
+  name        = upper(trim(var.projet_name))
+  description = "A demo with Terraform"
+}
