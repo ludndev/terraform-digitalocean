@@ -21,6 +21,10 @@ variable "digitalocean_token" {
 	description = "DigitalOcean API Token"
 	type        = string
 }
+variable "digitalocean_region" {
+	description = "DigitalOcean Region"
+	type        = string
+}
 
 # setup the provider
 provider "digitalocean" {
