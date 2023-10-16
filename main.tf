@@ -43,3 +43,21 @@ resource "digitalocean_vpc" "network" {
 	region   = var.digitalocean_region
 	ip_range = "10.10.10.0/28"
 }
+
+# create droplets (vps)
+resource "digitalocean_droplet" "droplet_middleware" {
+	name			= "${var.projet_name}-middleware"
+	image			= "ubuntu-22-04-x64"
+	size			= "s-1vcpu-512mb-10gb"
+	region			= var.digitalocean_region
+	ssh_keys		= var.ssh_pub_keys
+	vpc_uuid		= digitalocean_vpc.network.id
+}
+resource "digitalocean_droplet" "droplet_application" {
+	name			= "${var.projet_name}-application"
+	image			= "ubuntu-22-04-x64"
+	size			= "m-2vcpu-16gb"
+	region			= var.digitalocean_region
+	ssh_keys		= var.ssh_pub_keys
+	vpc_uuid		= digitalocean_vpc.network.id
+}
