@@ -8,6 +8,10 @@ terraform {
 }
 
 # from *.tfvars file
+variable "projet_name" {
+	description = "Project Name"
+	type        = string
+}
 variable "digitalocean_token" {
 	description = "DigitalOcean API Token"
 	type        = string
