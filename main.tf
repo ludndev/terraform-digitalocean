@@ -41,7 +41,7 @@ provider "digitalocean" {
 
 # add project
 resource "digitalocean_project" "project" {
-  name        = upper(trim(var.projet_name))
+  name        = upper(trimspace(var.projet_name))
   description = "A demo with Terraform"
 }
 
