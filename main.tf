@@ -105,7 +105,7 @@ resource "digitalocean_spaces_bucket_cors_configuration" "spaces_storage_cors" {
 	}
 	cors_rule {
 		allowed_headers = ["*"]
-		allowed_methods = ["PUT", "POST", "DELETE"]
+		allowed_methods = ["GET", "PUT", "POST", "DELETE"]
 		allowed_origins = var.digitalocean_spaces_allowed_origins
 		max_age_seconds = 3000
 	}
